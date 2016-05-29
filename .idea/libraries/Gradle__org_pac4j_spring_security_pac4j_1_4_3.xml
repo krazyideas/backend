@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.pac4j:spring-security-pac4j:1.4.3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.pac4j/spring-security-pac4j/1.4.3/82785d9d99ad1e5a7ee95a1a22dbf4464661c46d/spring-security-pac4j-1.4.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.pac4j/spring-security-pac4j/1.4.3/48678193f91454159a9c0e32ef33a7f58a16c5e0/spring-security-pac4j-1.4.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
