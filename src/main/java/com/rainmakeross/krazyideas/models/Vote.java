@@ -18,19 +18,19 @@ public class Vote {
     private long id;
 
     @OneToOne
-    @JoinColumn(name = "userId")
-    private User user;
+    @JoinColumn(name = "personId")
+    private Person person;
 
     @OneToOne
     @JoinColumn(name="ideaId")
     private Idea idea;
 
-    protected Vote() {
+    public Vote(){
 
     }
 
-    public Vote(User user, Idea idea) {
-        this.user = user;
+    public Vote(Person person, Idea idea) {
+        this.person = person;
         this.idea = idea;
     }
 
@@ -38,6 +38,6 @@ public class Vote {
     public String toString() {
         return String.format(
             "Vote[id=%d, user='%s', idea='%s']",
-            id, user, idea);
+            id, person, idea);
     }
 }

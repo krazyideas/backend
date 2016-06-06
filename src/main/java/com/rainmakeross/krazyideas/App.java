@@ -1,10 +1,10 @@
 package com.rainmakeross.krazyideas;
 
 import com.rainmakeross.krazyideas.models.Idea;
-import com.rainmakeross.krazyideas.models.User;
+import com.rainmakeross.krazyideas.models.Person;
 import com.rainmakeross.krazyideas.models.Vote;
-import com.rainmakeross.krazyideas.repositories.CustomerRepository;
 import com.rainmakeross.krazyideas.repositories.IdeaRepository;
+import com.rainmakeross.krazyideas.repositories.PersonRepository;
 import com.rainmakeross.krazyideas.repositories.VoteRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,9 +13,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Import;
+import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
 
+
+@Import(RepositoryRestMvcConfiguration.class)
 @SpringBootApplication
 public class App extends SpringBootServletInitializer {
+
 
     private static final Logger log = LoggerFactory.getLogger(App.class);
 
@@ -24,26 +29,26 @@ public class App extends SpringBootServletInitializer {
     }
 
     @Bean
-    public CommandLineRunner demo(CustomerRepository repository,
+    public CommandLineRunner demo(PersonRepository repository,
         IdeaRepository ideaRepository, VoteRepository voteRepository) {
         return (args) -> {
             // save a couple of customers
-            repository.save(new User("Jack", "Bauer"));
-            repository.save(new User("Chloe", "O'Brian"));
-            repository.save(new User("Kim", "Bauer"));
-            repository.save(new User("David", "Palmer"));
-            repository.save(new User("Michelle", "Dessler"));
+            repository.save(new Person("Jack", "Bauer"));
+            repository.save(new Person("Chloe", "O'Brian"));
+            repository.save(new Person("Kim", "Bauer"));
+            repository.save(new Person("David", "Palmer"));
+            repository.save(new Person("Michelle", "Dessler"));
 
             // fetch all customers
             log.info("Users found with findAll():");
             log.info("-------------------------------");
-            for (User user : repository.findAll()) {
+            for (Person user : repository.findAll()) {
                 log.info(user.toString());
             }
             log.info("");
 
             // fetch an individual user by ID
-            User user = repository.findOne(1L);
+            Person user = repository.findOne(1L);
             log.info("User found with findOne(1L):");
             log.info("--------------------------------");
             log.info(user.toString());
@@ -52,7 +57,7 @@ public class App extends SpringBootServletInitializer {
             // fetch customers by last name
             log.info("User found with findByLastName('Bauer'):");
             log.info("--------------------------------------------");
-            for (User bauer : repository.findByLastName("Bauer")) {
+            for (Person bauer : repository.findByLastName("Bauer")) {
                 log.info(bauer.toString());
             }
 
@@ -88,5 +93,7 @@ public class App extends SpringBootServletInitializer {
             log.info("");
         };
     }
+
+
 
 }
