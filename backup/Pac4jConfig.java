@@ -1,6 +1,6 @@
 package com.rainmakeross.krazyideas.configs;
 
-import org.pac4j.core.client.Client;
+
 import org.pac4j.core.client.Clients;
 import org.pac4j.oauth.client.GitHubClient;
 import org.pac4j.springframework.security.authentication.ClientAuthenticationProvider;
@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 class Pac4jConfig {
 
-    @Value("${oauth.callback.url}")
+   @Value("${oauth.callback.url}")
     String oauthCallbackUrl;
 
     @Value("${oauth.github.app.key}")

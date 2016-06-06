@@ -15,9 +15,9 @@ public class Idea {
     private long id;
     private String name;
     private String description;
+    private String shortDescription;
 
-    protected Idea() {
-
+    public Idea() {
     }
 
     public Idea(String name, String description) {

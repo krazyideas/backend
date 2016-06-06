@@ -9,7 +9,7 @@ import javax.persistence.Id;
 
 @Entity
 @Data
-public class User {
+public class Person {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -17,9 +17,11 @@ public class User {
     private String firstName;
     private String lastName;
 
-    protected User() {}
+    public Person(){
 
-    public User(String firstName, String lastName) {
+    }
+
+    public Person(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
@@ -30,5 +32,7 @@ public class User {
             "User[id=%d, firstName='%s', lastName='%s']",
             id, firstName, lastName);
     }
+
+
 
 }

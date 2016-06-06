@@ -1,8 +1,9 @@
 package com.rainmakeross.krazyideas.repositories;
 
 import com.rainmakeross.krazyideas.models.Idea;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-
-public interface IdeaRepository extends CrudRepository<Idea,Long> {
+@RepositoryRestResource(collectionResourceRel = "idea", path = "idea")
+public interface IdeaRepository extends PagingAndSortingRepository<Idea,Long> {
 }
