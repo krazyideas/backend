@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
 
 
-@Import(RepositoryRestMvcConfiguration.class)
+@Import(RepositoryConfig.class)
 @SpringBootApplication
 public class App extends SpringBootServletInitializer {
 
@@ -29,15 +29,18 @@ public class App extends SpringBootServletInitializer {
     }
 
     @Bean
-    public CommandLineRunner demo(PersonRepository repository,
-        IdeaRepository ideaRepository, VoteRepository voteRepository) {
+    public CommandLineRunner demo(
+            PersonRepository repository,
+            IdeaRepository ideaRepository,
+            VoteRepository voteRepository
+    ) {
         return (args) -> {
             // save a couple of customers
-            repository.save(new Person("Jack", "Bauer"));
-            repository.save(new Person("Chloe", "O'Brian"));
-            repository.save(new Person("Kim", "Bauer"));
-            repository.save(new Person("David", "Palmer"));
-            repository.save(new Person("Michelle", "Dessler"));
+            repository.save(new Person("Jack Bauer", "jack@test.com", "100001@github"));
+            repository.save(new Person("Chloe O'Brian", "chloe@test.com", "100002@github"));
+            repository.save(new Person("Kim Bauer", "kim@test.com", "100003@guthub"));
+            repository.save(new Person("David Palmer", "david@test.com", "100004@github"));
+            repository.save(new Person("Michelle Dessler", "michelle@test.com", "100005@github"));
 
             // fetch all customers
             log.info("Users found with findAll():");
@@ -54,10 +57,10 @@ public class App extends SpringBootServletInitializer {
             log.info(user.toString());
             log.info("");
 
-            // fetch customers by last name
-            log.info("User found with findByLastName('Bauer'):");
+            // fetch customers by authID
+            log.info("User found with findByAuthId():");
             log.info("--------------------------------------------");
-            for (Person bauer : repository.findByLastName("Bauer")) {
+            for (Person bauer : repository.findByAuthId("100001@github")) {
                 log.info(bauer.toString());
             }
 
