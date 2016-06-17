@@ -22,9 +22,10 @@ create table person(
 create unique index person_u1 on person(auth_id);
 
 create table vote(
-  id BIGINT AUTO_INCREMENT PRIMARY KEY,
+  id BIGINT AUTO_INCREMENT,
   person_Id BIGINT not null,
   idea_Id BIGINT not null,
+  PRIMARY KEY (person_Id, idea_Id),
   FOREIGN KEY (person_Id) REFERENCES person(id),
   FOREIGN KEY (idea_Id) REFERENCES idea(id)
 );

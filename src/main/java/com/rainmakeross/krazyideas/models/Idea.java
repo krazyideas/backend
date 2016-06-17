@@ -2,10 +2,13 @@ package com.rainmakeross.krazyideas.models;
 
 import lombok.Data;
 
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 @Data
@@ -16,6 +19,10 @@ public class Idea {
     private String name;
     private String description;
     private String shortDescription;
+
+    @OneToMany
+    @JoinColumn(name="id")
+    private List<Vote> votes;
 
     public Idea() {
     }
