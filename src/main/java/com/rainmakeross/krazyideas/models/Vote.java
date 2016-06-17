@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 
 @Entity
 @Data
@@ -17,11 +17,11 @@ public class Vote {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "personId")
     private Person person;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="ideaId")
     private Idea idea;
 
