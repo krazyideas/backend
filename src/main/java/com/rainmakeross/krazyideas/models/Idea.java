@@ -1,6 +1,7 @@
 package com.rainmakeross.krazyideas.models;
 
 import lombok.Data;
+import org.hibernate.annotations.Formula;
 
 import java.util.List;
 import javax.persistence.Entity;
@@ -19,6 +20,19 @@ public class Idea {
     private String name;
     private String description;
     private String shortDescription;
+
+    @Formula("(select count(*) from vote v where v.idea_Id = id)")
+    private int voteCount;
+
+    // this is anther option to calculate voteCount
+    /*private transient int voteCount;
+
+    public int getVoteCount(){
+        if (votes==null) {
+            return 0;
+        }
+        return votes.size();
+    }*/
 
     @OneToMany
     @JoinColumn(name="id")
