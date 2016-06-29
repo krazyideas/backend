@@ -1,4 +1,5 @@
 # backend
+[![](https://jitpack.io/v/krazyideas/backend.svg)](https://jitpack.io/#krazyideas/backend)
 Krazy Ideas Backend
 
 ## Licensing
