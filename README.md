@@ -2,6 +2,7 @@
 [![](https://jitpack.io/v/krazyideas/backend.svg)](https://jitpack.io/#krazyideas/backend)
 [![Build Status](https://travis-ci.org/krazyideas/backend.svg?branch=master)](https://travis-ci.org/krazyideas/backend)
 [![Coverage Status](https://coveralls.io/repos/github/krazyideas/backend/badge.svg?branch=master)](https://coveralls.io/github/krazyideas/backend?branch=master)
+[![License](http://img.shields.io/:license-apache-blue.svg?style=flat-square)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 Krazy Ideas Backend
 
