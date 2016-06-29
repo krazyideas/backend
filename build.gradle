@@ -19,6 +19,13 @@ plugins{
 install.dependsOn assemble
 apply plugin: 'spring-boot'
 
+jacocoTestReport {
+    reports {
+        xml.enabled = true // coveralls plugin depends on xml format report
+        html.enabled = true
+        html.destination "${buildDir}/jacocoHtml"
+    }
+}
 
 war {
     baseName = 'krazyideas-backend'
