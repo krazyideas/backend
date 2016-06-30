@@ -65,11 +65,15 @@ public class App extends SpringBootServletInitializer {
             }
 
             // save a couple of ideas
-            ideaRepository.save(new Idea("idea1", "Bauer"));
-            ideaRepository.save(new Idea("idea2", "O'Brian"));
-            ideaRepository.save(new Idea("idea3", "Bauer"));
+            String html1 = "<img src='https://avatars1.githubusercontent.com/u/19335630?v=3&s=200' alt='HTML5 Icon' width='128' height='128'>";
+            String html2 = "<img src='http://www.w3schools.com/html/html5.gif' alt='HTML5 Icon' width='128' height='128'>";
+            String html3 = " <div style='color:#0000FF'><h3>This is from database</h3><p>html rendering.</p>";
+            String html5 = "<table style='width:100%' border='1'> <tr><td>Jill</td><td>Smith</td> <td>aa</td></tr><tr><td>Eve</td><td>Jackson</td> <td>??</td></tr></table>";
+            ideaRepository.save(new Idea("idea1", "Bauer", html1));
+            ideaRepository.save(new Idea("idea2", "O'Brian", html2));
+            ideaRepository.save(new Idea("idea3", "Bauer", html3));
             ideaRepository.save(new Idea("idea4", "Palmer"));
-            ideaRepository.save(new Idea("idea5", "Dessler"));
+            ideaRepository.save(new Idea("idea5", "Dessler", html5));
 
             // fetch all ideas
             log.info("Ideas found with findAll():");
