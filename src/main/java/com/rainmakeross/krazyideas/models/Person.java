@@ -3,19 +3,15 @@ package com.rainmakeross.krazyideas.models;
 import lombok.Data;
 
 import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 @Entity
 @Data
 public class Person {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @SequenceGenerator(name="person_seq", sequenceName="person_id_seq")
+    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="person_seq")
     private long id;
     private String name;
     private String email;

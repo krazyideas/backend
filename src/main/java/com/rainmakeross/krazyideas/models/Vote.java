@@ -3,18 +3,14 @@ package com.rainmakeross.krazyideas.models;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 @Data
 public class Vote {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @SequenceGenerator(name="vote_seq", sequenceName="vote_id_seq")
+    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="vote_seq")
     private long id;
 
     @ManyToOne

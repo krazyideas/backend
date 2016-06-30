@@ -50,12 +50,12 @@ public class App extends SpringBootServletInitializer {
             }
             log.info("");
 
-            // fetch an individual user by ID
+            /*// fetch an individual user by ID
             Person user = repository.findOne(1L);
             log.info("User found with findOne(1L):");
             log.info("--------------------------------");
             log.info(user.toString());
-            log.info("");
+            log.info("");*/
 
             // fetch customers by authID
             log.info("User found with findByAuthId():");
@@ -83,21 +83,21 @@ public class App extends SpringBootServletInitializer {
             }
             log.info("");
 
-            // fetch an individual idea by ID
+            /*// fetch an individual idea by ID
             Idea idea = ideaRepository.findOne(1L);
             log.info("Idea found with findOne(1L):");
             log.info("--------------------------------");
             log.info(idea.toString());
-            log.info("");
+            log.info("");*/
 
-            voteRepository.save(new Vote(user, idea));
+            //voteRepository.save(new Vote(user, idea));
 
-            // fetch an individual vote by ID
+            /*// fetch an individual vote by ID
             Vote vote = voteRepository.findOne(1L);
             log.info("Idea found with findOne(1L):");
             log.info("--------------------------------");
             log.info(vote.toString());
-            log.info("");
+            log.info("");*/
         };
     }
 
