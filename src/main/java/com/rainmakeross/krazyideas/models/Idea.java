@@ -35,7 +35,7 @@ public class Idea {
     }*/
 
     @OneToMany
-    @JoinColumn(name="id")
+    @JoinColumn(name="ideaId")
     private List<Vote> votes;
 
     public Idea() {
