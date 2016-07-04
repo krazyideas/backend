@@ -1,25 +1,25 @@
 package com.rainmakeross.krazyideas.models;
 
+import org.hibernate.annotations.Type;
+
 import lombok.Data;
 
 import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 @Entity
 @Data
 public class Person {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @SequenceGenerator(name="person_seq", sequenceName="person_id_seq", allocationSize=1)
+    @GeneratedValue(generator="person_seq")
     private long id;
     private String name;
     private String email;
     private String authId;
+    @Type(type="yes_no")
+    private boolean adminFlag;
 
     @OneToMany
     @JoinColumn(name="personId")

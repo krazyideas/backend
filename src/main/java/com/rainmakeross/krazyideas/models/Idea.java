@@ -4,18 +4,14 @@ import lombok.Data;
 import org.hibernate.annotations.Formula;
 
 import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 @Entity
 @Data
 public class Idea {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @SequenceGenerator(name="idea_seq", sequenceName="idea_id_seq", allocationSize=1)
+    @GeneratedValue(generator="idea_seq")
     private long id;
     private String name;
     private String description;

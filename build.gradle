@@ -81,7 +81,8 @@ dependencies {
 
     compile("org.springframework.boot:spring-boot-starter-data-rest")
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
-    compile("com.h2database:h2")
+    //compile("com.h2database:h2")
+    compile group: 'org.postgresql', name: 'postgresql', version: '9.4-1206-jdbc42'
     testCompile("junit:junit")
     compile "org.projectlombok:lombok:1.16.8"
 }
