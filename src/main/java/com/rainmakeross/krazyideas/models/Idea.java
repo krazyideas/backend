@@ -20,6 +20,7 @@ public class Idea {
     private String name;
     private String description;
     private String shortDescription;
+    private String html;
 
     @Formula("(select count(*) from vote v where v.idea_Id = id)")
     private int voteCount;
@@ -44,6 +45,12 @@ public class Idea {
     public Idea(String name, String description) {
         this.name = name;
         this.description = description;
+    }
+
+    public Idea(String name, String description, String html) {
+        this.name = name;
+        this.description = description;
+        this.html = html;
     }
 
     @Override

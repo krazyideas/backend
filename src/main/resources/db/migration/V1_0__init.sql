@@ -2,7 +2,8 @@ create table idea(
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) not null,
     description VARCHAR(255),
-    short_description VARCHAR(255)
+    short_description VARCHAR(255),
+    html VARCHAR(4000)
 );
 
 create table user_type(
