@@ -9,8 +9,8 @@ import javax.persistence.*;
 @Data
 public class Vote {
     @Id
-    @SequenceGenerator(name="vote_seq", sequenceName="vote_id_seq")
-    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="vote_seq")
+    @SequenceGenerator(name="vote_seq", sequenceName="vote_id_seq", allocationSize=1)
+    @GeneratedValue(generator="vote_seq")
     private long id;
 
     @ManyToOne

@@ -10,8 +10,8 @@ import javax.persistence.*;
 @Data
 public class Idea {
     @Id
-    @SequenceGenerator(name="idea_seq", sequenceName="idea_id_seq")
-    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="idea_seq")
+    @SequenceGenerator(name="idea_seq", sequenceName="idea_id_seq", allocationSize=1)
+    @GeneratedValue(generator="idea_seq")
     private long id;
     private String name;
     private String description;

@@ -1,5 +1,7 @@
 package com.rainmakeross.krazyideas.models;
 
+import org.hibernate.annotations.Type;
+
 import lombok.Data;
 
 import java.util.List;
@@ -10,12 +12,14 @@ import javax.persistence.*;
 public class Person {
 
     @Id
-    @SequenceGenerator(name="person_seq", sequenceName="person_id_seq")
-    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="person_seq")
+    @SequenceGenerator(name="person_seq", sequenceName="person_id_seq", allocationSize=1)
+    @GeneratedValue(generator="person_seq")
     private long id;
     private String name;
     private String email;
     private String authId;
+    @Type(type="yes_no")
+    private boolean adminFlag;
 
     @OneToMany
     @JoinColumn(name="personId")
