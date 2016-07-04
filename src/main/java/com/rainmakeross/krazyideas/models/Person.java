@@ -22,7 +22,7 @@ public class Person {
     private String authId;
 
     @OneToMany
-    @JoinColumn(name="id")
+    @JoinColumn(name="personId")
     private List<Vote> votes;
 
     public Person() {
