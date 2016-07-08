@@ -12,3 +12,10 @@ gradle-app.setting
 
 .idea
 *.iml
+
+# to test application properties on classpath /config
+config/
+
+#binaries should be ignored with wrapper exception
+*.war
+*.jar
