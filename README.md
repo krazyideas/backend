@@ -9,3 +9,8 @@ Krazy Ideas Backend
 ## Licensing
 This product is licensed to all parties under the terms of Apache 2.0 Licensing terms which
 is included for reference on the same folder.
+
+## Configuration
+Create config/ folder on classpath where war is launched with java.
+In that folder, place a modified application.properties. Please read
+externalized configuration of Spring for further details.

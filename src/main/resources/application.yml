@@ -1,9 +1,0 @@
-flyway:
-  enabled: true
-  baseline-version: 1
-spring:
-  jpa:
-    hibernate:
-      ddl-auto: validate
-frontEnd:
-  host: localhost
