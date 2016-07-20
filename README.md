@@ -14,3 +14,5 @@ is included for reference on the same folder.
 Create config/ folder on classpath where war is launched with java.
 In that folder, place a modified application.properties. Please read
 externalized configuration of Spring for further details.
+
+There are example configuration on deploy project under the same krazyideas/ parent root for both backend and frontend.
