@@ -1,5 +1,6 @@
 package com.rainmakeross.krazyideas;
 
+import com.rainmakeross.krazyideas.models.Idea;
 import com.rainmakeross.krazyideas.models.Person;
 
 import org.springframework.context.annotation.Configuration;
@@ -12,5 +13,6 @@ public class RepositoryConfig extends RepositoryRestMvcConfiguration {
     @Override
     protected void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
         config.exposeIdsFor(Person.class);
+        config.exposeIdsFor(Idea.class);
     }
 }
