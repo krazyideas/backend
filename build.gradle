@@ -48,13 +48,13 @@ configurations {
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.18'
     compile("org.springframework.boot:spring-boot-starter-web") {
-        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+        //exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
     }
 
     //ServletException requires compile time servlet dependency but it causes problems
     //when deployed if exist on war run time.. hence provided but also compileOnly
-    compileOnly("org.springframework.boot:spring-boot-starter-tomcat")
-    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+    //compileOnly("org.springframework.boot:spring-boot-starter-tomcat")
+    //providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 
     // For DB Migrations
     compile "org.flywaydb:flyway-core:4.0.1"
@@ -83,6 +83,8 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     //compile("com.h2database:h2")
     compile group: 'org.postgresql', name: 'postgresql', version: '9.4-1206-jdbc42'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.3'
+
     testCompile("junit:junit")
     compile "org.projectlombok:lombok:1.16.8"
 }

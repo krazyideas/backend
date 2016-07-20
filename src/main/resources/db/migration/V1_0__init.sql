@@ -1,5 +1,5 @@
 create table idea(
-    id bigserial primary key,
+    id bigint AUTO_INCREMENT primary key,
     name varchar(255) not null,
     description varchar(255),
     short_description varchar(255),
@@ -7,7 +7,7 @@ create table idea(
 );
 
 create table person(
-  id bigserial primary key,
+  id bigint AUTO_INCREMENT primary key,
   name varchar(255) not null,
   email varchar(255),
   auth_id varchar(255) not null,
@@ -17,7 +17,7 @@ create table person(
 create unique index person_u1 on person(auth_id);
 
 create table vote(
-  id bigserial,
+  id bigint,
   person_id bigint not null,
   idea_id bigint not null,
   primary key (person_id, idea_id),
