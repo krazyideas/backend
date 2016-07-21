@@ -17,9 +17,10 @@ create table person(
 create unique index person_u1 on person(auth_id);
 
 create table vote(
-  id bigint,
+  id bigint AUTO_INCREMENT,
   person_id bigint not null,
   idea_id bigint not null,
+  index (id),
   primary key (person_id, idea_id),
   foreign key (person_id) references person(id),
   foreign key (idea_id) references idea(id)
