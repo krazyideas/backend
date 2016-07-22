@@ -3,6 +3,7 @@ package com.rainmakeross.krazyideas.models;
 import lombok.Data;
 import org.hibernate.annotations.Formula;
 
+import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
 
@@ -17,6 +18,7 @@ public class Idea {
     private String description;
     private String shortDescription;
     private String html;
+    private Date creationTime;
 
     @Formula("(select count(*) from vote v where v.idea_Id = id)")
     private int voteCount;

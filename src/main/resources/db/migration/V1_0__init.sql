@@ -3,7 +3,8 @@ create table idea(
     name varchar(255) not null,
     description varchar(255),
     short_description varchar(255),
-    html varchar(4000)
+    html varchar(4000),
+    creation_time DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
 create table person(
@@ -11,7 +12,8 @@ create table person(
   name varchar(255) not null,
   email varchar(255),
   auth_id varchar(255) not null,
-  admin_flag char not null default 'N' check (admin_flag in ('Y', 'N'))
+  admin_flag char not null default 'N' check (admin_flag in ('Y', 'N')),
+  creation_time DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
 create unique index person_u1 on person(auth_id);
@@ -23,5 +25,6 @@ create table vote(
   index (id),
   primary key (person_id, idea_id),
   foreign key (person_id) references person(id),
-  foreign key (idea_id) references idea(id)
+  foreign key (idea_id) references idea(id),
+  creation_time DATETIME DEFAULT CURRENT_TIMESTAMP
 );
