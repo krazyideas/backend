@@ -4,6 +4,7 @@ import org.hibernate.annotations.Type;
 
 import lombok.Data;
 
+import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
 
@@ -20,6 +21,7 @@ public class Person {
     private String authId;
     @Type(type="yes_no")
     private boolean adminFlag;
+    private Date creationTime;
 
     @OneToMany
     @JoinColumn(name="personId")
