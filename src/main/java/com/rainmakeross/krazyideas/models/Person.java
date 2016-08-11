@@ -27,6 +27,10 @@ public class Person {
     @JoinColumn(name="personId")
     private List<Vote> votes;
 
+    @OneToMany
+    @JoinColumn(name="personId")
+    private List<Comment> comments;
+
     public Person() {
     }
 
