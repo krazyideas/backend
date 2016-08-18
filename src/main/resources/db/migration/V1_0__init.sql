@@ -28,3 +28,13 @@ create table vote(
   foreign key (idea_id) references idea(id),
   creation_time DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+create table comment(
+  id BIGINT AUTO_INCREMENT PRIMARY KEY,
+  person_Id BIGINT not null,
+  idea_Id BIGINT not null,
+  FOREIGN KEY (person_Id) REFERENCES person(id),
+  FOREIGN KEY (idea_Id) REFERENCES idea(id),
+  content VARCHAR(4000) not null,
+  creation_time DATETIME DEFAULT CURRENT_TIMESTAMP
+);
